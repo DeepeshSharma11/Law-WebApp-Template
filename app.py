@@ -52,4 +52,4 @@ def internal_server_error(e):
     return "<h1>500 - Internal Server Error</h1><p>Something went wrong on our end.</p>", 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
