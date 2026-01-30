@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Kanun - Law Firm Website Template</title>
+        <title>Understanding Civil Law Cases - Kanun Law Firm</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Law Firm Website Template" name="keywords">
         <meta content="Law Firm Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
@@ -16,11 +16,11 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -31,9 +31,9 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ url_for('index') }}">
                                     <h1>Kanun</h1>
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                    <!-- <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo"> -->
                                 </a>
                             </div>
                         </div>
@@ -71,22 +71,22 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link">Practice</a>
-                                <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                                <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                                <a href="{{ url_for('index') }}" class="nav-item nav-link">Home</a>
+                                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                                <a href="{{ url_for('service') }}" class="nav-item nav-link">Practice</a>
+                                <a href="{{ url_for('team') }}" class="nav-item nav-link">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Case Studies</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu">
-                                        <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                        <a href="single.html" class="dropdown-item">Single Page</a>
+                                        <a href="{{ url_for('blog') }}" class="dropdown-item">Blog Page</a>
+                                        <a href="{{ url_for('single') }}" class="dropdown-item">Single Page</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
-                                <a class="btn" href="">Get Appointment</a>
+                                <a class="btn" href="{{ url_for('contact') }}">Get Appointment</a>
                             </div>
                         </div>
                     </nav>
@@ -100,11 +100,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>Single Page</h2>
+                            <h2>Understanding Civil Law Cases</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Home</a>
-                            <a href="">Single Page</a>
+                            <a href="{{ url_for('index') }}">Home</a>
+                            <a href="{{ url_for('blog') }}">Blog</a>
+                            <a href="{{ url_for('single') }}">Civil Law Guide</a>
                         </div>
                     </div>
                 </div>
@@ -115,77 +116,262 @@
             <!-- Single Page Start -->
             <div class="single">
                 <div class="container">
-                    <div class="section-header">
-                        <h2>This is Page Title</h2>
-                    </div>
                     <div class="row">
-                        <div class="col-12">
-                            <img class="img-fluid rounded" src="img/single.jpg" alt="Image">
-                            <h1>This is heading 1</h1>
-                            <h2>This is heading 2</h2>
-                            <h3>This is heading 3</h3>
-                            <h4>This is heading 4</h4>
-                            <h5>This is heading 5</h5>
-                            <h6>This is heading 6</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit. Nam congue molestie nibh in venenatis. Etiam non dui vel purus mollis consectetur. Sed at cursus lectus, sed iaculis lorem. Suspendisse venenatis est eu neque elementum, a accumsan tortor scelerisque. Nullam id erat arcu. Morbi suscipit commodo tortor non efficitur. Ut pretium sollicitudin lorem quis laoreet. Nulla vestibulum ante ut tellus hendrerit, ac condimentum sapien vehicula. Fusce dapibus, nulla non venenatis pretium, purus mauris vehicula elit, at posuere leo elit id augue. Donec ullamcorper tortor et tellus convallis maximus.
-                            </p>
-                            <ul class="ul-group">
-                                <li>First list item</li>
-                                <li>Second list item</li>
-                                <li>Third list item</li>
-                                <li>Fourth list item</li>
-                                <li>Fifth list item</li>
-                            </ul>
-                            <p>
-                                Mauris tempor et odio ut condimentum. Donec eleifend magna eu hendrerit lacinia. Praesent luctus diam ut rhoncus vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ut metus efficitur, volutpat eros et, mollis enim. Sed quis tortor id erat iaculis sagittis. Aenean at pretium lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam sollicitudin vitae lacus id fermentum. Nullam sit amet tortor arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum nibh in dui congue, id faucibus lectus auctor. Nunc quis tincidunt odio, id finibus massa. Phasellus tincidunt libero est, in blandit turpis malesuada a. Quisque congue, mauris non consectetur tempus, arcu urna blandit arcu, ac finibus dolor ante ut nibh. Etiam congue dignissim sollicitudin. 
-                            </p>
-                            <ol class="ol-group">
-                                <li>First list item</li>
-                                <li>Second list item</li>
-                                <li>Third list item</li>
-                                <li>Fourth list item</li>
-                                <li>Fifth list item</li>
-                            </ol>
-                            <p>
-                                Donec vel euismod tortor. Aenean euismod risus ac enim hendrerit, ac sagittis erat porta. Donec ultrices et massa at ullamcorper. Nam faucibus mattis mattis. Etiam a metus condimentum, pretium elit a, accumsan dui. Donec ipsum erat, ultricies ut ante vel, consequat elementum nibh. Vestibulum egestas id nunc lobortis bibendum. Aliquam odio ex, efficitur vitae risus vitae, iaculis suscipit justo. Nam eleifend orci nulla, in pulvinar risus eleifend sit amet
-                            </p>
-                            <ul class="list-group">
-                                <li class="list-group-item">First list item</li>
-                                <li class="list-group-item">Second list item</li>
-                                <li class="list-group-item">Third list item</li>
-                                <li class="list-group-item">Fourth list item</li>
-                                <li class="list-group-item">Fifth list item</li>
-                            </ul>
-                            <p>
-                                Aenean dolor nisi, ultrices vitae urna vitae, tristique auctor tortor. Cras eu aliquet metus. Nunc volutpat est nec convallis vulputate. Maecenas quis tortor molestie, maximus arcu mattis, vehicula orci. Curabitur consequat eu orci vel vulputate. In mollis purus in tellus consectetur, at tristique lacus gravida. Integer tempor mattis elit, eu mollis tellus pretium in. Duis id iaculis ipsum, eu tempus purus. Fusce euismod lacus quis felis eleifend egestas. Nam at dolor vitae risus varius mattis sed ut tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque diam nisl, interdum sit amet congue efficitur, ultrices id dolor. 
-                            </p>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Table Head</th>
-                                        <th>Table Head</th>
-                                        <th>Table Head</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                        <td>Table Cell</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="col-lg-8">
+                            <div class="single-content">
+                                <div class="section-header">
+                                    <h2>A Comprehensive Guide to Civil Law Cases</h2>
+                                    <div class="meta">
+                                        <p><i class="fa fa-user"></i> By <strong>Adam Phillips</strong></p>
+                                        <p><i class="fa fa-calendar-alt"></i> Published: <strong>January 15, 2024</strong></p>
+                                        <p><i class="fa fa-folder"></i> Category: <strong><a href="{{ url_for('service') }}">Civil Law</a></strong></p>
+                                    </div>
+                                </div>
+                                <img class="img-fluid rounded" src="{{ url_for('static', filename='img/single.jpg') }}" alt="Civil Law Image">
+                                
+                                <h3>Introduction to Civil Law</h3>
+                                <p>
+                                    Civil law represents one of the most common areas of legal practice, focusing on disputes between individuals, organizations, or both. Unlike criminal cases where the government prosecutes violations of laws, civil cases involve private parties seeking compensation or specific performance from other private parties. Understanding civil law is essential for anyone who might find themselves involved in a legal dispute that doesn't involve criminal charges.
+                                </p>
+
+                                <h3>Types of Civil Law Cases</h3>
+                                <p>
+                                    Civil law encompasses a wide range of legal matters. The most common types include:
+                                </p>
+                                <ul class="ul-group">
+                                    <li><strong>Contract Disputes:</strong> When one party fails to fulfill their obligations under a legally binding agreement</li>
+                                    <li><strong>Personal Injury:</strong> Cases involving harm caused by another's negligence or intentional actions</li>
+                                    <li><strong>Property Disputes:</strong> Issues related to real estate, boundary lines, or property ownership</li>
+                                    <li><strong>Family Law Matters:</strong> Divorce, child custody, and support cases</li>
+                                    <li><strong>Employment Law:</strong> Discrimination, wrongful termination, and workplace disputes</li>
+                                    <li><strong>Business Litigation:</strong> Disputes between companies or business partners</li>
+                                </ul>
+
+                                <h3>The Civil Litigation Process</h3>
+                                <p>
+                                    Understanding the civil litigation process can help you prepare for what to expect if you need to pursue or defend against a civil claim. The typical process involves several key stages:
+                                </p>
+                                <ol class="ol-group">
+                                    <li><strong>Consultation:</strong> Meeting with an attorney to discuss your case and legal options</li>
+                                    <li><strong>Filing Complaint:</strong> The plaintiff files a formal complaint outlining their claims</li>
+                                    <li><strong>Response:</strong> The defendant files an answer to the complaint</li>
+                                    <li><strong>Discovery:</strong> Both parties exchange information and gather evidence</li>
+                                    <li><strong>Pre-trial Motions:</strong> Legal arguments made before the trial begins</li>
+                                    <li><strong>Trial:</strong> Presentation of evidence and arguments before a judge or jury</li>
+                                    <li><strong>Judgment:</strong> The court's decision on the case</li>
+                                    <li><strong>Appeal:</strong> Either party may appeal the judgment if they believe legal errors occurred</li>
+                                </ol>
+
+                                <h3>Key Differences: Civil vs. Criminal Law</h3>
+                                <p>
+                                    Many people confuse civil and criminal law, but they serve fundamentally different purposes in our legal system:
+                                </p>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Aspect</th>
+                                            <th>Civil Law</th>
+                                            <th>Criminal Law</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Purpose</strong></td>
+                                            <td>Resolve disputes between private parties</td>
+                                            <td>Punish offenses against society</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Plaintiff</strong></td>
+                                            <td>Individual or organization</td>
+                                            <td>Government (state or federal)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Standard of Proof</strong></td>
+                                            <td>Preponderance of evidence</td>
+                                            <td>Beyond reasonable doubt</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Possible Outcomes</strong></td>
+                                            <td>Monetary damages, injunctions, specific performance</td>
+                                            <td>Fines, imprisonment, probation</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Right to Attorney</strong></td>
+                                            <td>Not guaranteed (hire privately)</td>
+                                            <td>Guaranteed by Constitution</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h3>When to Consult a Civil Law Attorney</h3>
+                                <p>
+                                    Knowing when to seek legal counsel can make a significant difference in the outcome of your case. Consider consulting a civil law attorney if you:
+                                </p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Have suffered significant financial losses due to someone else's actions</li>
+                                    <li class="list-group-item">Are facing a lawsuit or legal claim from another party</li>
+                                    <li class="list-group-item">Need to draft or review important legal contracts</li>
+                                    <li class="list-group-item">Are involved in a dispute that negotiations haven't resolved</li>
+                                    <li class="list-group-item">Need guidance on your legal rights and obligations</li>
+                                </ul>
+
+                                <h3>Recent Developments in Civil Law</h3>
+                                <p>
+                                    Civil law continues to evolve with changes in society and technology. Recent trends include increased focus on data privacy issues, the impact of artificial intelligence on contract law, and new approaches to alternative dispute resolution methods like mediation and arbitration. Staying informed about these developments is crucial for both individuals and businesses navigating the legal landscape.
+                                </p>
+
+                                <div class="single-tags">
+                                    <span><i class="fa fa-tags"></i> Tags:</span>
+                                    <a href="{{ url_for('blog') }}?tag=civil">Civil Law</a>
+                                    <a href="{{ url_for('blog') }}?tag=litigation">Litigation</a>
+                                    <a href="{{ url_for('blog') }}?tag=legal-guide">Legal Guide</a>
+                                    <a href="{{ url_for('blog') }}?tag=dispute">Dispute Resolution</a>
+                                </div>
+
+                                <div class="single-share">
+                                    <span><i class="fa fa-share-alt"></i> Share:</span>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="sidebar">
+                                <div class="sidebar-widget">
+                                    <div class="search-widget">
+                                        <form>
+                                            <input class="form-control" type="text" placeholder="Search Article">
+                                            <button class="btn"><i class="fa fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                <div class="sidebar-widget">
+                                    <h2 class="widget-title">Recent Posts</h2>
+                                    <div class="recent-post">
+                                        <div class="post-item">
+                                            <div class="post-img">
+                                                <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" alt="Blog">
+                                            </div>
+                                            <div class="post-text">
+                                                <a href="{{ url_for('single') }}">Family Law: Protecting Your Loved Ones</a>
+                                                <div class="post-meta">
+                                                    <p>By<a href="">Gloria Edwards</a></p>
+                                                    <p>In<a href="{{ url_for('service') }}">Family Law</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-item">
+                                            <div class="post-img">
+                                                <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" alt="Blog">
+                                            </div>
+                                            <div class="post-text">
+                                                <a href="{{ url_for('single') }}">Business Contracts: What You Need to Know</a>
+                                                <div class="post-meta">
+                                                    <p>By<a href="">Adam Phillips</a></p>
+                                                    <p>In<a href="{{ url_for('service') }}">Business Law</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-item">
+                                            <div class="post-img">
+                                                <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Blog">
+                                            </div>
+                                            <div class="post-text">
+                                                <a href="{{ url_for('single') }}">Criminal Defense: Know Your Rights</a>
+                                                <div class="post-meta">
+                                                    <p>By<a href="">Dylan Adams</a></p>
+                                                    <p>In<a href="{{ url_for('service') }}">Criminal Law</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="sidebar-widget">
+                                    <div class="image-widget">
+                                        <a href="{{ url_for('contact') }}"><img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Free Consultation"></a>
+                                    </div>
+                                </div>
+                                
+                                <div class="sidebar-widget">
+                                    <div class="tab-post">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                                            </li>
+                                        </ul>
+                                        
+                                        <div class="tab-content">
+                                            <div id="featured" class="container tab-pane active">
+                                                <div class="post-item">
+                                                    <div class="post-img">
+                                                        <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Blog">
+                                                    </div>
+                                                    <div class="post-text">
+                                                        <a href="{{ url_for('single') }}">Understanding Civil Law Cases</a>
+                                                        <div class="post-meta">
+                                                            <p>By<a href="">Adam Phillips</a></p>
+                                                            <p>In<a href="{{ url_for('service') }}">Civil Law</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="popular" class="container tab-pane fade">
+                                                <div class="post-item">
+                                                    <div class="post-img">
+                                                        <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" alt="Blog">
+                                                    </div>
+                                                    <div class="post-text">
+                                                        <a href="{{ url_for('single') }}">Family Law Updates 2024</a>
+                                                        <div class="post-meta">
+                                                            <p>By<a href="">Gloria Edwards</a></p>
+                                                            <p>In<a href="{{ url_for('service') }}">Family Law</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="latest" class="container tab-pane fade">
+                                                <div class="post-item">
+                                                    <div class="post-img">
+                                                        <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" alt="Blog">
+                                                    </div>
+                                                    <div class="post-text">
+                                                        <a href="{{ url_for('single') }}">Cybersecurity Regulations</a>
+                                                        <div class="post-meta">
+                                                            <p>By<a href="">Adam Phillips</a></p>
+                                                            <p>In<a href="{{ url_for('service') }}">Cyber Law</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="sidebar-widget">
+                                    <h2 class="widget-title">Practice Areas</h2>
+                                    <div class="category-widget">
+                                        <ul>
+                                            <li><a href="{{ url_for('service') }}">Civil Law</a><span>(24)</span></li>
+                                            <li><a href="{{ url_for('service') }}">Family Law</a><span>(18)</span></li>
+                                            <li><a href="{{ url_for('service') }}">Business Law</a><span>(32)</span></li>
+                                            <li><a href="{{ url_for('service') }}">Criminal Law</a><span>(28)</span></li>
+                                            <li><a href="{{ url_for('service') }}">Cyber Law</a><span>(15)</span></li>
+                                            <li><a href="{{ url_for('service') }}">Real Estate Law</a><span>(21)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,10 +384,11 @@
                 <div class="container">
                     <div class="section-header">
                         <h2>Subscribe Our Newsletter</h2>
+                        <p>Get the latest legal insights delivered to your inbox</p>
                     </div>
                     <div class="form">
-                        <input class="form-control" placeholder="Email here">
-                        <button class="btn">Submit</button>
+                        <input class="form-control" placeholder="Enter your email">
+                        <button class="btn">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -214,9 +401,9 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-about">
-                                <h2>About Us</h2>
+                                <h2>About Kanun Law Firm</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                    Kanun Law Firm provides comprehensive legal guidance and representation. Our experienced attorneys are dedicated to helping clients understand their legal rights and navigate complex legal matters with confidence and expertise.
                                 </p>
                             </div>
                         </div>
@@ -224,30 +411,30 @@
                             <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
-                                <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
+                                <h2>Practice Areas</h2>
+                                <a href="{{ url_for('service') }}">Civil Law</a>
+                                <a href="{{ url_for('service') }}">Family Law</a>
+                                <a href="{{ url_for('service') }}">Business Law</a>
+                                <a href="{{ url_for('service') }}">Criminal Law</a>
+                                <a href="{{ url_for('service') }}">Cyber Law</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Useful Pages</h2>
-                                <a href="">About Us</a>
-                                <a href="">Practices</a>
-                                <a href="">Attorneys</a>
-                                <a href="">Case Studies</a>
-                                <a href="">FAQs</a>
+                                <a href="{{ url_for('about') }}">About Us</a>
+                                <a href="{{ url_for('service') }}">Practice Areas</a>
+                                <a href="{{ url_for('team') }}">Our Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}">Case Studies</a>
+                                <a href="{{ url_for('blog') }}">Legal Blog</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-contact">
                                 <h2>Get In Touch</h2>
                                 <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                <p><i class="fa fa-phone-alt"></i>+123 456 7890</p>
+                                <p><i class="fa fa-envelope"></i>info@kanunlaw.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -267,17 +454,16 @@
                         <a href="">Privacy policy</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
-                        <a href="">FQAs</a>
+                        <a href="">FAQs</a>
                     </div>
                 </div>
                 <div class="container copyright">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                            <p>&copy; <a href="https://technoviaxtech.site">technoviaX Tech</a>, All Right Reserved.</p>
                         </div>
                         <div class="col-md-6">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                            <p>Designed By <a href="https://technoviaxtech.site">technoviaX Tech</a></p>
                         </div>
                     </div>
                 </div>
@@ -290,11 +476,11 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>
