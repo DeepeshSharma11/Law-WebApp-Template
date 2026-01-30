@@ -1,6 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
+import os
 
 app = Flask(__name__)
+
+# Serve favicon from root
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'img'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # Main routes
 @app.route('/')
@@ -35,14 +42,14 @@ def single():
 def contact():
     return render_template('contact.html')
 
-# Error handlers
+# Simple error handlers without template rendering
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return "<h1>404 - Page Not Found</h1><p>The page you're looking for doesn't exist.</p>", 404
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('500.html'), 500
+    return "<h1>500 - Internal Server Error</h1><p>Something went wrong on our end.</p>", 500
 
 if __name__ == '__main__':
     app.run(debug=True)

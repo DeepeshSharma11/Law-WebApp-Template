@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Kanun - Law Firm Website Template</title>
+        <title>Our Blog - Kanun Law Firm</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Law Firm Website Template" name="keywords">
         <meta content="Law Firm Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
@@ -16,11 +16,11 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -31,9 +31,9 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ url_for('index') }}">
                                     <h1>Kanun</h1>
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                    <!-- <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo"> -->
                                 </a>
                             </div>
                         </div>
@@ -71,19 +71,19 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link">Practice</a>
-                                <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                                <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                                <a href="{{ url_for('index') }}" class="nav-item nav-link">Home</a>
+                                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                                <a href="{{ url_for('service') }}" class="nav-item nav-link">Practice</a>
+                                <a href="{{ url_for('team') }}" class="nav-item nav-link">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Case Studies</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu">
-                                        <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                        <a href="single.html" class="dropdown-item">Single Page</a>
+                                        <a href="{{ url_for('blog') }}" class="dropdown-item">Blog Page</a>
+                                        <a href="{{ url_for('single') }}" class="dropdown-item">Single Page</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
                                 <a class="btn" href="">Get Appointment</a>
@@ -103,8 +103,8 @@
                             <h2>Our Blog</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Home</a>
-                            <a href="">Our Blog</a>
+                            <a href="{{ url_for('index') }}">Home</a>
+                            <a href="{{ url_for('blog') }}">Our Blog</a>
                         </div>
                     </div>
                 </div>
@@ -120,140 +120,140 @@
                     </div>
                     <div class="row blog-page">
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Blog">
+                            <h3>Understanding Civil Law Cases</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Civil Law</a>
+                                <a href="{{ url_for('service') }}">Civil Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>15-Jan-2024</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Learn about the most common civil law cases and how to protect your rights in disputes involving contracts, property, and personal injury.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" alt="Blog">
+                            <h3>Family Law: Protecting Your Loved Ones</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Family Law</a>
+                                <a href="{{ url_for('service') }}">Family Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>10-Jan-2024</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Essential insights into family law matters including divorce, child custody, and prenuptial agreements for securing your family's future.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-3.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" alt="Blog">
+                            <h3>Business Contracts: What You Need to Know</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Business Law</a>
+                                <a href="{{ url_for('service') }}">Business Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>05-Jan-2024</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Key elements every business owner should include in their contracts to prevent legal disputes and protect their company's interests.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Blog">
+                            <h3>Education Law Rights for Students</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Education Law</a>
+                                <a href="{{ url_for('service') }}">Education Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>28-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Understanding student rights, special education requirements, and discrimination protections in educational institutions.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" alt="Blog">
+                            <h3>Criminal Defense: Know Your Rights</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Criminal Law</a>
+                                <a href="{{ url_for('service') }}">Criminal Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>20-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Essential information about criminal defense procedures, your rights during arrests, and how to navigate the justice system.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-3.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" alt="Blog">
+                            <h3>Cybersecurity Laws for Businesses</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Cyber Law</a>
+                                <a href="{{ url_for('service') }}">Cyber Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>15-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Understanding the latest cybersecurity regulations and compliance requirements to protect your business from digital threats.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" alt="Blog">
+                            <h3>Property Law: Buying Your First Home</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Property Law</a>
+                                <a href="{{ url_for('service') }}">Property Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>10-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                A comprehensive guide to property law essentials for first-time home buyers including contracts, titles, and closing procedures.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" alt="Blog">
+                            <h3>Political Law and Public Service</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Political Law</a>
+                                <a href="{{ url_for('service') }}">Political Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>05-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Exploring the legal framework governing political activities, elections, and public service responsibilities.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                         <div class="col-lg-4 col-md-6 blog-item">
-                            <img src="img/blog-3.jpg" alt="Blog">
-                            <h3>Lorem ipsum dolor</h3>
+                            <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" alt="Blog">
+                            <h3>Social Law and Community Rights</h3>
                             <div class="meta">
                                 <i class="fa fa-list-alt"></i>
-                                <a href="">Social Law</a>
+                                <a href="{{ url_for('service') }}">Social Law</a>
                                 <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
+                                <p>01-Dec-2023</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor
+                                Understanding social welfare laws, community rights, and legal protections for vulnerable populations in society.
                             </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn" href="{{ url_for('single') }}">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                <li class="page-item"><a class="page-link" href="{{ url_for('blog') }}?page=1">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="{{ url_for('blog') }}?page=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="{{ url_for('blog') }}?page=3">3</a></li>
+                                <li class="page-item"><a class="page-link" href="{{ url_for('blog') }}?page=3">Next</a></li>
                             </ul> 
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                             <div class="footer-about">
                                 <h2>About Us</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                    Kanun Law Firm provides exceptional legal services with integrity and dedication. Our team of expert attorneys specializes in various practice areas to deliver comprehensive legal solutions for our clients.
                                 </p>
                             </div>
                         </div>
@@ -294,20 +294,20 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
+                                <a href="{{ url_for('service') }}">Civil Law</a>
+                                <a href="{{ url_for('service') }}">Family Law</a>
+                                <a href="{{ url_for('service') }}">Business Law</a>
+                                <a href="{{ url_for('service') }}">Education Law</a>
+                                <a href="{{ url_for('service') }}">Immigration Law</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Useful Pages</h2>
-                                <a href="">About Us</a>
-                                <a href="">Practices</a>
-                                <a href="">Attorneys</a>
-                                <a href="">Case Studies</a>
+                                <a href="{{ url_for('about') }}">About Us</a>
+                                <a href="{{ url_for('service') }}">Practices</a>
+                                <a href="{{ url_for('team') }}">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}">Case Studies</a>
                                 <a href="">FAQs</a>
                             </div>
                         </div>
@@ -316,7 +316,7 @@
                                 <h2>Get In Touch</h2>
                                 <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
                                 <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                <p><i class="fa fa-envelope"></i>info@kanunlaw.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -336,17 +336,16 @@
                         <a href="">Privacy policy</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
-                        <a href="">FQAs</a>
+                        <a href="">FAQs</a>
                     </div>
                 </div>
                 <div class="container copyright">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                            <p>&copy; <a href="https://technoviaxtech.site">technoviaX Tech</a>, All Right Reserved.</p>
                         </div>
                         <div class="col-md-6">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                            <p>Designed By <a href="https://technoviaxtech.site">technoviaX Tech</a></p>
                         </div>
                     </div>
                 </div>
@@ -359,11 +358,11 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>
