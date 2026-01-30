@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Kanun - Law Firm Website Template</title>
+        <title>Practice Areas - Kanun Law Firm</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Law Firm Website Template" name="keywords">
         <meta content="Law Firm Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
@@ -16,11 +16,11 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -31,9 +31,9 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ url_for('index') }}">
                                     <h1>Kanun</h1>
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                    <!-- <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo"> -->
                                 </a>
                             </div>
                         </div>
@@ -71,22 +71,22 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link active">Practice</a>
-                                <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                                <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                                <a href="{{ url_for('index') }}" class="nav-item nav-link">Home</a>
+                                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                                <a href="{{ url_for('service') }}" class="nav-item nav-link active">Practice</a>
+                                <a href="{{ url_for('team') }}" class="nav-item nav-link">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Case Studies</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu">
-                                        <a href="single-page.html" class="dropdown-item">Blog Page</a>
-                                        <a href="#" class="dropdown-item">Single Page</a>
+                                        <a href="{{ url_for('blog') }}" class="dropdown-item">Blog Page</a>
+                                        <a href="{{ url_for('single') }}" class="dropdown-item">Single Page</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
-                                <a class="btn" href="">Get Appointment</a>
+                                <a class="btn" href="{{ url_for('contact') }}">Get Appointment</a>
                             </div>
                         </div>
                     </nav>
@@ -100,11 +100,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>Practices Areas</h2>
+                            <h2>Practice Areas</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Home</a>
-                            <a href="">Practices Areas</a>
+                            <a href="{{ url_for('index') }}">Home</a>
+                            <a href="{{ url_for('service') }}">Practice Areas</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,8 @@
             <div class="service">
                 <div class="container">
                     <div class="section-header">
-                        <h2>Our Practices Areas</h2>
+                        <h2>Our Practice Areas</h2>
+                        <p>Comprehensive legal services tailored to meet your specific needs</p>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
@@ -126,9 +127,9 @@
                                 </div>
                                 <h3>Civil Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Resolution of disputes between individuals and organizations involving contracts, property disputes, personal injury claims, and civil rights violations.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -138,9 +139,9 @@
                                 </div>
                                 <h3>Family Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Legal matters involving family relationships including divorce, child custody, adoption, prenuptial agreements, and domestic violence protection.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -150,9 +151,9 @@
                                 </div>
                                 <h3>Business Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Corporate legal services including business formation, contracts, mergers & acquisitions, compliance, intellectual property, and commercial litigation.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -162,9 +163,9 @@
                                 </div>
                                 <h3>Education Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Legal issues in educational institutions including student rights, special education, discrimination, teacher contracts, and academic freedom.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -174,9 +175,9 @@
                                 </div>
                                 <h3>Criminal Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Defense representation for criminal charges ranging from misdemeanors to felonies, including white-collar crimes, DUI, and federal offenses.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -186,9 +187,45 @@
                                 </div>
                                 <h3>Cyber Law</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+                                    Legal issues related to internet, technology, and digital privacy including data protection, cybercrime, intellectual property online, and e-commerce.
                                 </p>
-                                <a class="btn" href="">Learn More</a>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <h3>Real Estate Law</h3>
+                                <p>
+                                    Property transactions, landlord-tenant disputes, zoning issues, construction contracts, and real estate development legal matters.
+                                </p>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-passport"></i>
+                                </div>
+                                <h3>Immigration Law</h3>
+                                <p>
+                                    Visa applications, citizenship processes, deportation defense, asylum cases, and work permit legal assistance for individuals and families.
+                                </p>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-heartbeat"></i>
+                                </div>
+                                <h3>Healthcare Law</h3>
+                                <p>
+                                    Medical malpractice, healthcare compliance, patient rights, hospital regulations, and healthcare provider legal representation.
+                                </p>
+                                <a class="btn" href="{{ url_for('single') }}">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +240,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             <div class="section-header">
-                                <h2>Why Choose Us</h2>
+                                <h2>Why Choose Kanun Law Firm</h2>
                             </div>
                             <div class="row align-items-center feature-item">
                                 <div class="col-5">
@@ -212,9 +249,9 @@
                                     </div>
                                 </div>
                                 <div class="col-7">
-                                    <h3>Best law practices</h3>
+                                    <h3>Expert Legal Representation</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                        Our attorneys have decades of combined experience with proven track records in complex legal matters across all practice areas.
                                     </p>
                                 </div>
                             </div>
@@ -225,9 +262,9 @@
                                     </div>
                                 </div>
                                 <div class="col-7">
-                                    <h3>Efficiency & Trust</h3>
+                                    <h3>Strategic Approach & Efficiency</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                        We develop customized legal strategies for each client, ensuring efficient case management and optimal results while minimizing costs.
                                     </p>
                                 </div>
                             </div>
@@ -238,16 +275,29 @@
                                     </div>
                                 </div>
                                 <div class="col-7">
-                                    <h3>Results you deserve</h3>
+                                    <h3>Client-Centered Success</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                        We measure our success by your satisfaction, with a 95% client retention rate and numerous successful case outcomes for our clients.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row align-items-center feature-item">
+                                <div class="col-5">
+                                    <div class="feature-icon">
+                                        <i class="fa fa-award"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <h3>Award-Winning Legal Team</h3>
+                                    <p>
+                                        Recognized by legal associations for excellence, our firm has received multiple awards for outstanding legal service and client advocacy.
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="feature-img">
-                                <img src="img/feature.jpg" alt="Feature">
+                                <img src="{{ url_for('static', filename='img/feature.jpg') }}" alt="Feature">
                             </div>
                         </div>
                     </div>
@@ -261,10 +311,11 @@
                 <div class="container">
                     <div class="section-header">
                         <h2>Subscribe Our Newsletter</h2>
+                        <p>Stay updated with the latest legal insights and firm news</p>
                     </div>
                     <div class="form">
-                        <input class="form-control" placeholder="Email here">
-                        <button class="btn">Submit</button>
+                        <input class="form-control" placeholder="Enter your email">
+                        <button class="btn">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -277,9 +328,9 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-about">
-                                <h2>About Us</h2>
+                                <h2>About Kanun Law Firm</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                    Kanun Law Firm is a premier legal practice with expertise across multiple practice areas. Our dedicated team of attorneys combines legal excellence with personalized service to deliver outstanding results for our clients.
                                 </p>
                             </div>
                         </div>
@@ -287,30 +338,30 @@
                             <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
-                                <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
+                                <h2>Practice Areas</h2>
+                                <a href="{{ url_for('service') }}">Civil Law</a>
+                                <a href="{{ url_for('service') }}">Family Law</a>
+                                <a href="{{ url_for('service') }}">Business Law</a>
+                                <a href="{{ url_for('service') }}">Criminal Law</a>
+                                <a href="{{ url_for('service') }}">Real Estate Law</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Useful Pages</h2>
-                                <a href="">About Us</a>
-                                <a href="">Practices</a>
-                                <a href="">Attorneys</a>
-                                <a href="">Case Studies</a>
-                                <a href="">FAQs</a>
+                                <a href="{{ url_for('about') }}">About Us</a>
+                                <a href="{{ url_for('service') }}">Practice Areas</a>
+                                <a href="{{ url_for('team') }}">Our Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}">Case Studies</a>
+                                <a href="{{ url_for('contact') }}">Free Consultation</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-contact">
                                 <h2>Get In Touch</h2>
                                 <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                <p><i class="fa fa-phone-alt"></i>+123 456 7890</p>
+                                <p><i class="fa fa-envelope"></i>info@kanunlaw.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -330,17 +381,16 @@
                         <a href="">Privacy policy</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
-                        <a href="">FQAs</a>
+                        <a href="">FAQs</a>
                     </div>
                 </div>
                 <div class="container copyright">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                            <p>&copy; <a href="https://technoviaxtech.site">technoviaX Tech</a>, All Right Reserved.</p>
                         </div>
                         <div class="col-md-6">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                            <p>Designed By <a href="https://technoviaxtech.site">technoviaX Tech</a></p>
                         </div>
                     </div>
                 </div>
@@ -353,11 +403,11 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>

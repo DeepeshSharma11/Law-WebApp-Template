@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Kanun - Law Firm Website Template</title>
+        <title>Contact Us - Kanun Law Firm</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Law Firm Website Template" name="keywords">
         <meta content="Law Firm Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
@@ -16,11 +16,11 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -31,9 +31,9 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{ url_for('index') }}">
                                     <h1>Kanun</h1>
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                    <!-- <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo"> -->
                                 </a>
                             </div>
                         </div>
@@ -71,19 +71,19 @@
 
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a href="index.html" class="nav-item nav-link">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link">Practice</a>
-                                <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                                <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
+                                <a href="{{ url_for('index') }}" class="nav-item nav-link">Home</a>
+                                <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                                <a href="{{ url_for('service') }}" class="nav-item nav-link">Practice</a>
+                                <a href="{{ url_for('team') }}" class="nav-item nav-link">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Case Studies</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu">
-                                        <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                        <a href="single.html" class="dropdown-item">Single Page</a>
+                                        <a href="{{ url_for('blog') }}" class="dropdown-item">Blog Page</a>
+                                        <a href="{{ url_for('single') }}" class="dropdown-item">Single Page</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                                <a href="{{ url_for('contact') }}" class="nav-item nav-link active">Contact</a>
                             </div>
                             <div class="ml-auto">
                                 <a class="btn" href="">Get Appointment</a>
@@ -103,8 +103,8 @@
                             <h2>Contact Us</h2>
                         </div>
                         <div class="col-12">
-                            <a href="">Home</a>
-                            <a href="">Contact Us</a>
+                            <a href="{{ url_for('index') }}">Home</a>
+                            <a href="{{ url_for('contact') }}">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -139,25 +139,37 @@
                                     <i class="fa fa-envelope"></i>
                                     <div class="contact-text">
                                         <h2>Email</h2>
-                                        <p>info@example.com</p>
+                                        <p>info@kanunlaw.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fa fa-clock"></i>
+                                    <div class="contact-text">
+                                        <h2>Business Hours</h2>
+                                        <p>Mon - Fri: 8:00 AM - 9:00 PM</p>
+                                        <p>Saturday: 9:00 AM - 5:00 PM</p>
+                                        <p>Sunday: By Appointment Only</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
-                                <form>
+                                <form id="contactForm" action="{{ url_for('contact') }}" method="POST">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name" required="required" />
+                                        <input type="text" class="form-control" name="name" placeholder="Your Name" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email" required="required" />
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject" required="required" />
+                                        <input type="text" class="form-control" name="phone" placeholder="Your Phone" />
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Message" required="required" ></textarea>
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" placeholder="Your Message" required="required" rows="5"></textarea>
                                     </div>
                                     <div>
                                         <button class="btn" type="submit">Send Message</button>
@@ -194,7 +206,7 @@
                             <div class="footer-about">
                                 <h2>About Us</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                    Kanun Law Firm is committed to providing exceptional legal services with integrity and dedication. Our team of expert attorneys specializes in various practice areas to deliver comprehensive legal solutions for our clients.
                                 </p>
                             </div>
                         </div>
@@ -203,20 +215,20 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
+                                <a href="{{ url_for('service') }}">Civil Law</a>
+                                <a href="{{ url_for('service') }}">Family Law</a>
+                                <a href="{{ url_for('service') }}">Business Law</a>
+                                <a href="{{ url_for('service') }}">Education Law</a>
+                                <a href="{{ url_for('service') }}">Immigration Law</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Useful Pages</h2>
-                                <a href="">About Us</a>
-                                <a href="">Practices</a>
-                                <a href="">Attorneys</a>
-                                <a href="">Case Studies</a>
+                                <a href="{{ url_for('about') }}">About Us</a>
+                                <a href="{{ url_for('service') }}">Practices</a>
+                                <a href="{{ url_for('team') }}">Attorneys</a>
+                                <a href="{{ url_for('portfolio') }}">Case Studies</a>
                                 <a href="">FAQs</a>
                             </div>
                         </div>
@@ -225,7 +237,7 @@
                                 <h2>Get In Touch</h2>
                                 <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
                                 <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                <p><i class="fa fa-envelope"></i>info@kanunlaw.com</p>
                                 <div class="footer-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -245,17 +257,16 @@
                         <a href="">Privacy policy</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
-                        <a href="">FQAs</a>
+                        <a href="">FAQs</a>
                     </div>
                 </div>
                 <div class="container copyright">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                            <p>&copy; <a href="https://technoviaxtech.site">technoviaX Tech</a>, All Right Reserved.</p>
                         </div>
                         <div class="col-md-6">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                            <p>Designed By <a href="https://technoviaxtech.site">technoviaX Tech</a></p>
                         </div>
                     </div>
                 </div>
@@ -268,11 +279,22 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        
+        <!-- Contact Form JavaScript -->
+        <script>
+            $(document).ready(function(){
+                $('#contactForm').on('submit', function(e){
+                    e.preventDefault();
+                    alert('Thank you for your message! We will contact you soon.');
+                    this.reset();
+                });
+            });
+        </script>
     </body>
 </html>
